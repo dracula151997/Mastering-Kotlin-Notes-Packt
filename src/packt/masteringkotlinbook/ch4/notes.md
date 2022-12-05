@@ -17,7 +17,7 @@
 * The compiler will force us to _override_ the `method` to disambiguate which implementation to use.
 > This is likely not a common occurrence, but without this ability features such as default interface method implementations would be far more restricted.
 
-![Interfaces and Interface Inheritance](interfaces.png)
+![Interfaces and Interface Inheritance](imgs/interfaces.png)
 
 > When implementing an interface, we don't always have to implement all the interface methods. We can define our class as `abstract` and let a subclass finish the interface implementation.
 
@@ -31,7 +31,7 @@
    *  If you want to prevent a method to be overridden once an implementation is provided, an overridden method can be marked `final` to **_prevent future modification._**
 > `open` indicate the compiler that a class is open for extension
 
-![Subclasses & abstract classes](Subclasses%20and%20abstract.png)
+![Subclasses & abstract classes](imgs/Subclasses%20and%20abstract.png)
 
 ---
 
@@ -39,6 +39,4 @@
    * A class defined within another class is not treated as an `inner` class by _default_, meaning it does not have an implicit reference to the enclosing class.
 > Nested class cannot access reference of the outer class and its properties.
 
-![Nested classes](nested%20classes.png)
-
-
+![Nested classes](imgs/nested%20classes.png)
