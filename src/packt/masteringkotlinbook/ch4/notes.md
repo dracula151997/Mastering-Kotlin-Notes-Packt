@@ -37,6 +37,6 @@
 
 4. **Nested classes**
    * A class defined within another class is not treated as an `inner` class by _default_, meaning it does not have an implicit reference to the enclosing class.
-> Nested class cannot access reference of the outer class and its properties.
+> By default, Nested class cannot access reference of the outer class and its properties but by using `by` keyword you can access it..
 
 ![Nested classes](imgs/nested%20classes.png)
