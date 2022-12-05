@@ -1,0 +1,88 @@
+Achieving inheritance and composition (Notes)
+    Interfaces
+        1. Interfaces:
+            * interfaces in Kotlin may define default method definitions.
+                Kotlin also provides the ability to define interface properties,
+                which can either be abstract or can include a default implementation.
+            * you can define properties inside interfaces
+            * It's possible to provide a default value for the interface property. In such a case, it's no longer required to override the property in any implementing class.
+
+        2. Interface inheritance
+            * A class can implement multiple interfaces.
+            * Any class that implement a child interface which extends from parent interface will be
+            required to implement the parent and child interface methods and properties if required
+            * A class can implement multiple interfaces.
+            * Kotlin interfaces provide a default implementation for methods and it doesn't need to be overridden in an implementation class.
+            * What happens if two interfaces both have identical methods with different default implementations?
+                - When any class implements multiple interfaces with identical methods, the code will not compile event through all methods are either implemented or have a default implementation.
+                - This is because the compiler knows that the update method has two inherited implementations from the superclasses.
+                The compiler will force us to override the 'method' to disambiguate which implementation to use
+                -  This is likely not a common occurrence, but without this ability features such as default interface method implementations would be far more restricted.
+
+        class Player : Movable, Drawable {
+
+                ...
+
+         override fun update(currentTime: Long) {
+                super<Movable>.update(currentTime)
+                super<Drawable>.update(currentTime)
+            }
+        }
+
+Note: When implementing an interface, we don't always have to implement all of the interface methods. We can define our class as abstract and let a subclass finish the interface implementation.
+------------------------------------------------------------------------------------------------------------------------
+    Subclasses and abstract classes
+        * If we want to define a class that implements an interface but doesn't provide implementations for all of the required methods, we can mark the class as abstract.
+        * If you want to make a class to be extended, it must use the open keyword. (open -> indicate the compiler that a class is open for extension)
+        * If you want to override a non-interface method, it must be marked as open.
+        * Once a method has been overridden, it is open by default.
+        * If you want to prevent a method to be overridden once an implementation is provided, an overridden method can be marked final to prevent future modification.
+------------------------------------------------------------------------------------------------------------------------
+    Nested classes
+        * A class defined within another class is not treated as an inner class by default, meaning it does not have an implicit reference to the enclosing class.
+                    (means that it cannot access outer class's properties)
+        class Outer {
+            val a = "a"
+            val b = "b"
+
+            class Nested {
+                val c = a // compiler error (because it is not inner class)
+                //under the hood, this class is a static class and therefore cannot access members of the enclosing class.
+            }
+        }
+
+------------------------------------------------------------------------------------------------------------------------
+    Delegation
+        * Delegation is a common design pattern allowing a class to defer the implementation of some behavior to another class; increasing the amount of reusable code in our projects.
+        Example:
+        interface SettingsProvider {
+            fun getSetting(key: String) : String
+        }
+
+        object SettingsManager : SettingsProvider {
+            private val map = HashMap<String, String>()
+
+            override fun getSetting(key: String)
+                    = map.getOrDefault(key, "")
+        }
+
+        class UserManager : SettingsProvider by SettingsManager
+
+    Type Checking
+        Any:
+            * Every class in Kotlin extends Any
+            * has three member functions:
+                - equals
+                - hashCode
+                - toString
+            * Iy also has several extension functions defined against it. This allows those extension functions to work for any class declared in your project.
+
+
+
+
+
+
+
+
+
+
