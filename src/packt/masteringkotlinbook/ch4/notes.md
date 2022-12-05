@@ -1,3 +1,9 @@
+#### Let's connect
+  [Linkedin](https://https://www.linkedin.com/in/hassanmohammed1997/)
+
+  [Twitter](https://twitter.com/dracula1597)
+  
+  ---
 ## Chapter [4]
 
 ### Achieving inheritance and composition (Notes)
