@@ -11,7 +11,6 @@ Achieving inheritance and composition (Notes)
             * A class can implement multiple interfaces.
             * Any class that implement a child interface which extends from parent interface will be
             required to implement the parent and child interface methods and properties if required
-            * A class can implement multiple interfaces.
             * Kotlin interfaces provide a default implementation for methods and it doesn't need to be overridden in an implementation class.
             * What happens if two interfaces both have identical methods with different default implementations?
                 - When any class implements multiple interfaces with identical methods, the code will not compile event through all methods are either implemented or have a default implementation.
