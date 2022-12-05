@@ -13,7 +13,7 @@
 
 > What happens if two interfaces both have identical methods with different default implementations?
 
-* When any class implements multiple interfaces with identical methods, the code will not compile even through all methods are either implemented or have a default implementation. This is because the compiler knows that the update method has two inherited implementations from the superclasses.
+* When any class implements multiple interfaces with identical methods, the code will not compile even through all methods are either implemented or have a default implementation. This is because the compiler knows that the `method` has two inherited implementations from the superclasses.
 * The compiler will force us to _override_ the `method` to disambiguate which implementation to use.
 > This is likely not a common occurrence, but without this ability features such as default interface method implementations would be far more restricted.
 
