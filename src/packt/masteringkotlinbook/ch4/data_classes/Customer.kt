@@ -1,4 +1,4 @@
-package packt.masteringkotlinbook.ch4.dataclasses
+package packt.masteringkotlinbook.ch4.data_classes
 
 data class Customer(
     val name: String,
