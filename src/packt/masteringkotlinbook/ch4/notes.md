@@ -30,11 +30,12 @@
 ---
 
 3. **Subclasses and abstract classes**
-   *  If we want to define a class that implements an interface but doesn't provide implementations for all the required methods, we can mark the class as `abstract`.
+   * If we want to define a class that implements an interface but doesn't provide implementations for all the required methods, we can mark the class as `abstract`.
    * If you want to make a class to be extended, it must use the `open` keyword.
    * * If you want to override a _non-interface method_, it must be marked as `open`.
    * Once a method has been overridden, it is `open` by _default_.
-   *  If you want to prevent a method to be overridden once an implementation is provided, an overridden method can be marked `final` to **_prevent future modification._**
+   * If you want to prevent a method to be overridden once an implementation is provided, an overridden method can be marked `final` to **_prevent future modification._**
+
 > `open` indicate the compiler that a class is open for extension
 
 ![Subclasses & abstract classes](imgs/Subclasses%20and%20abstract.png)
