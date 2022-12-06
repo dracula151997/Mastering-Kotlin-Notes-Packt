@@ -15,11 +15,11 @@
 
 ## Data class Example
 
-### **Java** 😕
+### - **Java** 😕
 
 ![data_class_in_java.png](assets/data_class_in_java.png)
 
-#### **Kotlin** ❤️
+#### - **Kotlin** ❤️
 
 * We can rewrite the above example in kotlin with single line of code ❤️ 🎉️
 
@@ -118,6 +118,7 @@ fun main(args: Array<String>) {
     println("gender = $gender")
 }
 ```
+
 > This was possible because the compiler generates `componentN()` functions all properties for a data class.
 
 ```
@@ -131,3 +132,5 @@ fun main(args: Array<String>) {
     println(u1.component3())     // "Male"
 }
 ```
+* You can use **underscore symbol** `_` to tell the compiler to _skip_ that variable like this code snippet.
+  `val (_,_,gender) = u1`
