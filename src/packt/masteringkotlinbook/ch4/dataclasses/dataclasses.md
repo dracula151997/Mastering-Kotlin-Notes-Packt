@@ -69,10 +69,9 @@ data class Customer(
         println("Identical")
     else
         println("Not same")
+    }
 
   ```
-
-}
 
 
 > To compare whether two objects are **structurally** the same, the equivalent of calling `.equals()`, use `==`. To check whether two variables **point to the same object**(reference), use `===`.
