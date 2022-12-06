@@ -12,7 +12,7 @@
    * Each parameter must indicate `var` or `val`.
    * It can inherit another class, and implement an `interface`.
 
-* Data class Example
+## Data class Example
 
 ### **Java** 😕
 
