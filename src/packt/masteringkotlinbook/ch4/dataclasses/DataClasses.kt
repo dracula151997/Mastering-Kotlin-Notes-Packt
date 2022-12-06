@@ -76,5 +76,7 @@ fun main(args: Array<String>) {
         println("They are the same")
     }
 
+    val (title, author) = article1
+
     println(article1.toString())
 }
