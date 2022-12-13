@@ -1,5 +1,7 @@
 package packt.masteringkotlinbook.ch4.enums
 
+import packt.masteringkotlinbook.ch4.enums.Day.*
+
 enum class Day {
     MONDAY(1, "Monday"),
     TUESDAY(2, "Tuesday"),
@@ -57,6 +59,24 @@ enum class DayAsAnonymousClass(val dayOfWeek: Int, val weekName: String) {
     abstract fun nextDay(): DayAsAnonymousClass
 }
 
-fun main() {
-    DayAsAnonymousClass.FRIDAY.name
+fun main(currentDay: Day) {
+/*    when(currentDay){
+        MONDAY -> TODO()
+        TUESDAY -> TODO()
+        WEDNESDAY -> TODO()
+        THURSDAY -> TODO()
+        FRIDAY -> TODO()
+        SATURDAY -> TODO()
+        SUNDAY -> TODO()
+    }*/
+    for (value in Day.values()){
+        println(
+            "Day ${value.dayOfWeek} -> ${value.weekName}"
+        )
+    }
+/*
+    for (value in DayAsAnonymousClass.values()) {
+
+    }
+*/
 }

@@ -1,5 +1,6 @@
 ## Chapter[4]
 
+
 ### Enums and Sealed classes
 
 ## Enums
@@ -81,7 +82,7 @@ By running this code, you would get the following result:
 ### Adding custom properties and methods
 
 * In particular, methods and properties must be added _**below**_ the enum constants definition, after a semicolon.
-* You can provide them with a default  value
+* You can provide them with a default value
 * It can have both _instance_ and _static methods_
 
   ```
@@ -125,8 +126,9 @@ By running this code, you would get the following result:
 
 ### Using anonymous classes to define enum constants
 
-* In Kotlin, You can create anonymous classes to define specific enum constants. 
-* Each enum constant is instantiated by declaring its own anonymous classes while overriding the required abstract method.
+* In Kotlin, You can create anonymous classes to define specific enum constants.
+* Each enum constant is instantiated by declaring its own anonymous classes while overriding the required abstract
+  method.
 
 ```
 enum class Day(val dayOfWeek: Int, val weekName: String) {
@@ -157,4 +159,44 @@ enum class Day(val dayOfWeek: Int, val weekName: String) {
 }
 ```
 
+### Enums in Action
 
+Enum classes are particularly useful when used with Kotlin’s `when` conditional statement. Enums allow you to
+differentiate logic based on their value.
+
+They also make your code more **readable and less error-prone**. This is because they establish the maximum number of
+possible options to be considered in a when statement. This way, you cannot forget one.
+
+```
+fun main (currentDay: Day) {
+    when(currentDay){
+        MONDAY -> TODO()
+        TUESDAY -> TODO()
+        WEDNESDAY -> TODO()
+        THURSDAY -> TODO()
+        FRIDAY -> TODO()
+        SATURDAY -> TODO()
+        SUNDAY -> TODO()
+    }
+}
+```
+
+### Enums build-in methods
+
+* `values()`: returns the list of all the enum constants contained within the enum class.
+* `valueOf(value: String)`: returns the enum constant whose `name` property matches the value string passed as a
+  parameter. If not found, an `IllegalArgumentException` is thrown.
+
+### Iterating through enums
+
+```
+fun main () {
+       for (value in Day.values()){
+        println("Day ${value.dayOfWeek} -> ${value.weekName}")
+    }
+}
+```
+
+# Sources
+* [A complete guide to enum classes in Kotlin](https://blog.logrocket.com/kotlin-enum-classes-complete-guide/)
+* [Working with enums section in Mastering Kotlin](https://subscription.packtpub.com/book/application-development/9781838555726/7/ch07lvl1sec43/working-with-enums-sealed-classes-and-objects)
