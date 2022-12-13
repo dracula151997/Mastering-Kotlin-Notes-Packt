@@ -12,7 +12,8 @@ and methods, implement interfaces, use anonymous classes** and much more.
 
 * Kotlin enum classes is to treat them as collections of constants.
 
-```enum class Day {
+```
+enum class Day {
     MONDAY, 
     TUESDAY,
     WEDNESDAY, 
