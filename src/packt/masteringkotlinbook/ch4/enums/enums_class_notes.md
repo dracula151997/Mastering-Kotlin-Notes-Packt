@@ -1,8 +1,3 @@
-## Chapter[4]
-
-
-### Enums and Sealed classes
-
 ## Enums
 
 A useful feature while programming is having the ability to indicate that a variable only has a _finite set of possible
